@@ -1,6 +1,14 @@
-// src/global.scss
+// global.scss
 
-// Your global styles here
+// Add your global styles here
+$primary-color: #FFF;
+$bg-primary : #161141;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $bg-primary;
+    margin: 0px !important;
+  }
 
-// Optionally, import Bootstrap if you haven't done so in app.html
-@import 'bootstrap/scss/bootstrap';
+  // Import Bootstrap or other styles if needed
+ @import 'bootstrap/scss/bootstrap';
+
