@@ -28,6 +28,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"bootstrap": "^5.3.2"
+		"@lottiefiles/svelte-lottie-player": "^0.3.1",
+		"bootstrap": "^5.3.2",
+		"lottie-web": "^5.12.2"
 	}
 }

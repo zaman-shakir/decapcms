@@ -41,6 +41,3 @@
     </Router>
   </main>
 
-  <style>
-    /* Add global styles here */
-  </style>
