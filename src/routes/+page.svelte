@@ -278,8 +278,75 @@
             </div>
         </div>
     </div>
-    <div class="row fourth-section">
+    <div class="row fourth-section container-fluid" style="display: flex;
+    flex-direction: row;
+    justify-content: center;     margin-top: -200px;
+    padding-top: 320px;
+    z-index: -2;
+    padding-bottom: 100px;">
+        <div class="container" style="width: 1116px;display: flex;
+        flex-direction: column;
+        align-items: center;" >
+            <div class="row" style="margin-bottom:60px;">
+                <h1 style="color:#FFF;">Industries we serve​</h1>
+            </div>
+            <div class="row sec4-btn" style="display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 700px;
+        }" >
+                <button>E-Commerce</button>
+                <button>Marketplaces</button>
+                <button>Gaming</button>
+                <button>Gaming</button>
+                <button>Luxury</button>
+                <button>Travel and Hospitality</button>
+                <button>Real Estate</button>
+                <button>Fashion</button>
+                <button>Fintech & EMIs</button>
+                <button>Payment Service Providers</button>
+                <button>Professional Services</button>
+                <button>Creator Economy platforms</button>
 
+
+            </div>
+            <div class="row" style="height:100px"> &nbsp;
+\            </div>
+            <div class="row sec4-btn" style="display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 700px;">
+                <h3 style="color:#FFF; width:fit-content">I am </h3><button> an E-Commerce</button>
+                <button>a Marketplaces</button>
+                <button>a Luxury Business</button>
+\            </div>
+        </div>
+    </div>
+    <div class="row fift-section container-fluid" style="display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 150px;
+
+    padding-bottom: 150px;">
+        <div class="container" style="width: 1116px;display: flex;
+        flex-direction: column;
+        align-items: center;" >
+            <div class="row" style="margin-bottom:60px;">
+                <h1 style="color:#161141; font-size:64px; line-height:79px;text-align: center;">Join over 20,000 businesses
+                    enjoying the benefits of digital currency payments with Triple-A.​</h1>
+            </div>
+            <div class="row" style="display: flex;
+            justify-content: space-around;">
+                <div class="col-3">
+                    <button style="color:#161141 !important; background-color:#FFF; border: 1px solid #7E7E7E !important;"  type="button" class="secondary-btn btn-pm">Get in touch</button>
+                </div>
+                <div class="col-3">
+                    <button  type="button" class="primary-btn btn-pm">Sign up</button>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
 <style>
@@ -291,6 +358,7 @@
         background-position: center center;
         background-size: cover;
     }
+
     .second-section{
         background-image: url("https://triple-a.io/wp-content/uploads/2023/09/Frame-2610813.png");
         /* background-position: center center; */
@@ -302,6 +370,14 @@
         /* background-position: center center; */
         background-size: cover;
         margin-top: -180px;
+    }
+    .fourth-section{
+        background-color: #161141;
+    }
+    .fifth-section{
+        background-image: url("https://triple-a.io/wp-content/uploads/2023/08/Group-628202.svg");
+        background-position: center center;
+        background-size: cover;
     }
     .video-row{
         display: flex;
@@ -324,6 +400,19 @@
     .nav-link.active{
         font-weight: 500;
         color: #FFF;
+    }
+    .sec4-btn button{
+        width: fit-content;
+        background-color: transparent;
+        color: #FFF;
+        border-radius: 150px;
+        border:solid 1px #fff;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-bottom: 30px;
+
     }
 </style>
   <Footer />
