@@ -71,44 +71,6 @@
         list-style: none;
         width: 100%;
     }
-    .primary-btn{
-        display: flex;
-        width: 144px;
-        height: 40px;
-        padding: 8px 16px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 150px;
-        background: var(--Primary-Colors-Spring-Green, #0F8);
-        color: var(--Primary-Colors-Federal-Blue, #161141);
-        text-align: center;
-        /* DM Sans/(Reg) B3 */
-        font-family: DM Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 18px; /* 128.571% */
-    }
-    .secondary-btn{
-        display: flex;
-        width: 144px;
-        height: 40px;
-        padding: 8px 16px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 150px;
-        border: 1px solid var(--Greyscale-Colors-White, #FFF);
-        color: var(--Greyscale-Colors-White, #FFF);
-        text-align: center;
-        background: #161141;
 
-        /* DM Sans/(Reg) B3 */
-        font-family: DM Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 18px; /* 128.571% */
-
-    }
   </style>
 

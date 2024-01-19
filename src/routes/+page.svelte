@@ -4,205 +4,284 @@
     import Footer from '../components/Footer.svelte';
     import { onMount } from 'svelte';
     import animation from '../components/lottie.json';
+    // import VideoPlayer from 'svelte-video-player';
+
+    let paused = false;
 
 </script>
 
   <Header />
 
-  <div class="container-fluid">
-    <div class="row first-section">
-        <div class="col-6 col-md-6 col-sm-6">
-            <div class="row">
-                <h1>Pay & get paid in BTC without touching Crypto</h1>
-            </div>
-            <div class="row">
-                <p>Enjoy the benefits of cryptocurrency payments without having to hold or convert crypto, with zero-volatility and next-day bank settlement.</p>
-            </div>
-            <div class="row">
-                <div class="col-6 col-md-6 col-sm-6">
-                    <p>Reach 420M+ crypto owners</p>
-                    <p>Licensed & Secure</p>
+    <div class="container-fluid first-section" style="display: flex;
+    flex-direction: row;
+    justify-content: center;">
+        <div class="row container" style="margin-top:100px;padding-bottom:216px; width: 1116px;">
+            <div class="col-7 col-md-7 col-sm-12">
+                <div class="row">
+                    <h1 class="fancy-text" style="font-size: 48px;line-height:64px; font-weight:700;">Pay & get paid in BTC <br> without touching Crypto</h1>
                 </div>
-                <div class="col-6 col-md-6 col-sm-6">
-                    <p>Increase your revenue</p>
-                    <p>White label</p>
+                <div class="row" style="margin-top: 40px;">
+                    <p style="font-size:16px; color:#7E7E7E;font-weight:400;">Enjoy the benefits of cryptocurrency payments without having to hold or convert crypto, with zero-volatility and next-day bank settlement.</p>
+                </div>
+                <div class="row"  style="margin-top: 40px;">
+                    <div class="col-6 col-md-6 col-sm-6">
+                        <p  style="font-size:16px; color:#7E7E7E;font-weight:400;">Reach 420M+ crypto owners</p>
+                        <p  style="font-size:16px; color:#7E7E7E;font-weight:400;">Licensed & Secure</p>
+                    </div>
+                    <div class="col-6 col-md-6 col-sm-6">
+                        <p style="font-size:16px; color:#7E7E7E;font-weight:400;">Increase your revenue</p>
+                        <p style="font-size:16px; color:#7E7E7E;font-weight:400;">White label</p>
 
+                    </div>
+                </div>
+                <div class="row"  style="margin-top: 80px;">
+                    <div class="col-5">
+                        <button class="primary-btn btn-pm">Talk to our team</button>
+                    </div>
+                    <div class="col-5">
+                        <button class="secondary-btn btn-pm">Sign up</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-3 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/09/logo-nobackground-5000-1-1.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-3 video-row">
+                        <a  href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/image-15.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-3 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/image-16.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-3 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/image-17.svg"} alt="brnad1"></a>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4">
-                    <button class="btn btn-success">Talk to our team</button>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-light">Sign up</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/09/logo-nobackground-5000-1-1.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-3">
-                    <a  href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/image-15.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-3">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/image-16.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-3">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/image-17.svg"} alt="brnad1"></a>
-                </div>
-            </div>
-        </div>
+            <!-- src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", -->
+            <!-- poster="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" -->
 
-        <div class="col-6" >
-            LOTTIE <br> FILES
+            <div class="col-5" >
+                <video
+                src="homepage-top.mp4",
+                width="570px"
+                autoplay muted loop
+                ><track kind="captions"></video>
+                <!-- <VideoPlayer width="500" height="500" poster="./local_poster.jpg" source="../components/homepage_top.mp4" loop="true" /> -->
+            </div>
         </div>
     </div>
-    <div class="row second-section">
-        <div class="row">
-            <h1 class="secondary-text">420 million people worldwide<br>
-                want you to offer</h1>
-        </div>
-        <div class="row">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Crypto Payments</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Crypto Payouts</button>
-                </li>
 
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="container-fluid second-section" style="display: flex;
+    flex-direction: row;
+    justify-content: center;" >
+        <div class="container" style="width: 1116px;">
+            <div class="row second-space" style="height: 300px;" >&nbsp;
+
+            </div>
+            <div class="row" style="justify-content: center;">
+                <h1 class="secondary-text" style="    display: flex;
+                /* align-items: center; */
+                justify-content: center;
+                color: #FFF;
+                font-family: 'DM Sans', Sans-serif;
+                font-size: 44px;
+                font-weight: 700;
+                line-height: 64px;
+                width:700px;
+                margin-bottom:60px;
+            ">420 million people worldwide
+                    want you to offer</h1>
+            </div>
+            <div class="row" style="margin-top: 60px; margin-bottom:100px">
+                <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom: 60px;">
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Crypto Payments</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Crypto Payouts</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-6">
+                                <video
+                                src="homepage-cryptopayments.mp4",
+                                width="510px"
+                                height="510px"
+                                autoplay muted loop
+                                >
+                                <track kind="captions">
+                                </video>
+                            </div>
+                            <div class="col-6" style="    display: flex;
+                            flex-direction: column;
+                            justify-content: center;">
+                                <div class="row" style="margin-bottom:30px;color:#FFF;  font-size:18px;line-height:26px;"><p>Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.</p></div>
+                                <div class="row"  style="margin-bottom:30px;color:#FFF;  font-size:18px;line-height:26px;"><p>
+                                    Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.
+                                    Enjoy lower transaction fees, faster settlements and no chargebacks!</p></div>
+                                <div class="row">
+                                    <button class="secondary-btn  btn-pm btn-trans">Find out more</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-6">
+                                <video
+                                src="homepage-cryptopayouts.mp4",
+                                width="510px"
+                                height="510px"
+                                autoplay muted loop
+                                >
+                                <track kind="captions">
+                                </video>                        </div>
+                            <div class="col-6" style="    display: flex;
+                            flex-direction: column;
+                            justify-content: center;">
+                                <div class="row"  style="margin-bottom:30px;color:#FFF; font-size:18px;line-height:26px;"><p>Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.</p></div>
+                                <div class="row"  style="margin-bottom:30px;color:#FFF; font-size:18px;line-height:26px;"><p>
+                                    Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.
+                                    Enjoy lower transaction fees, faster settlements and no chargebacks!</p></div>
+                                <div class="row">
+                                    <button class="secondary-btn btn-pm btn-trans">Find out more</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 100px;     display: flex;
+                justify-content: space-evenly;">
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/62b0c3d62951158751131e7e_1.svg.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-3 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/62b0c3d79103d607ae28ea89_bookingcom-logo-svgrepo-com201.svg.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610802.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610799.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/razer-1-1.svg"} alt="brnad1"></a>
+                    </div>
+                </div>
+                <div class="row" style="display: flex;
+                justify-content: space-evenly;margin-top:28px;">
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/10/istudio_logo.png"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610798.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610800.svg"} alt="brnad1"></a>
+                    </div>
+                    <div class="col-2 video-row">
+                        <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/628c0242eac3cc8248526caa_Asset-24-1-1.svg"} alt="brnad1"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <p style="color: #FFF; font-size:16px">Crypto Payments</p>
+            </div>
+            <div class="row">
+                <div class="col-6">
                     <div class="row">
-                        <div class="col-6"> Lottie Video</div>
                         <div class="col-6">
-                            <div class="row"><p>Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.</p></div>
-                            <div class="row"><p>
-                                Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.
-                                Enjoy lower transaction fees, faster settlements and no chargebacks!</p></div>
-                            <div class="row"><button class="btn btn-primary">Find out more</button></div>
+                            <h2 style="color: #FFF; font-size:32px;margin-top:60px;margin-bottom:90px;">Accept crypto, receive funds
+                                in USD
+                                the next day.</h2>
+                                <button class="primary-btn btn-pm">Find Out More</button>
+                        </div>
+                        <div class="col-6"style="color: #FFF; font-size:16px;margin-top:60px;" >
+                            <p style="font-weight: 700;">Never touch crypto </p>
+                            <p>Next-day bank settlement in over 50+ local currencies</p>
+
+                            <p style="font-weight: 700;">Best payment experience</p>
+                            <p>Compatible with all wallets</p>
+
+                            <p style="font-weight: 700;">Eliminate chargebacks</p>
+                            <p>Payments are irreversible</p>
+
+                            <p style="font-weight: 700;">Zero volatility</p>
+                            <p>Locked-in exchange rate</p>
+
 
                         </div>
                     </div>
 
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="row">
-                        <div class="col-6"> Lottie Video</div>
-                        <div class="col-6">
-                            <div class="row"><p>Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.</p></div>
-                            <div class="row"><p>
-                                Accept payments from a new audience of 420 million crypto owners without holding and converting crypto.
-                                Enjoy lower transaction fees, faster settlements and no chargebacks!</p></div>
-                            <div class="row"><button class="btn btn-primary">Find out more</button></div>
+                <div class="col-6">
+                    <img class="width100" src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-70.png"} alt="crypto payments">
 
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row third-section container-fluid" style="display: flex;
+    flex-direction: row;
+    justify-content: center; margin-top: -235px;padding-top:260px;
+    z-index: -1;
+">
+        <div class="container" style="width: 1116px;">
+            <div class="row" style="margin-bottom: 30px;">
+                <div class="col-6"> &nbsp;
+                </div>
+                <div class="col-6">
+                    <p>Crypto Payouts</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6" style="display: flex;
+                justify-content: center;
+                flex-direction: column;">
+                    <img class="width100" src={"https://triple-a.io/wp-content/uploads/2023/08/Group-130-min.png"} alt="crypto payments">
+
+                </div>
+                <div class="col-6">
+                    <div class="row" style="margin-bottom: 90px;">
+                        <h1 style="font-size: 32px;">Pay anyone, anywhere with crypto.
+                        </h1>
+                    </div>
+                    <div class="row" >
+                        <div class="col-4">
+                            <p>Never touch crypto </p>
+                            <p>Send crypto payments without holding or managing crypto.</p>
+                            <p>Available 24/7</p>
+                            <p>Real-time payouts</p>
                         </div>
+                        <div class="col-4">
+                            <p>Save on fees</p>
+                            <p>Pay lower fees than traditional remittance and cross-border payment solutions.</p>
+                            <p>Zero volatility</p>
+                            <p>Locked-in exchange rate</p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 60px; margin-bottom:60px">
+                        <button class="primary-btn btn-pm">Find Out More</button>
+
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/62b0c3d62951158751131e7e_1.svg.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/62b0c3d79103d607ae28ea89_bookingcom-logo-svgrepo-com201.svg.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610802.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610799.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/07/razer-1-1.svg"} alt="brnad1"></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/10/istudio_logo.png"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610798.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-2610800.svg"} alt="brnad1"></a>
-                </div>
-                <div class="col-2">
-                    <a href="https://www.google.com"><img src={"https://triple-a.io/wp-content/uploads/2023/08/628c0242eac3cc8248526caa_Asset-24-1-1.svg"} alt="brnad1"></a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="row third-section">
-        <div class="row">
-            <p>Crypto Payments</p>
-        </div>
-        <div class="col-6">
-            <div class="row">
-                <div class="col-6">
-                    <h2>Accept crypto, receive funds
-                        in USD
-                        the next day.</h2>
-                        <button class="btn btn-primary">Find Out More</button>
-                </div>
-                <div class="col-6">
-                    <p>Never touch crypto </p>
-                    <p>Next-day bank settlement in over 50+ local currencies</p>
-
-                    <p>Best payment experience</p>
-                    <p>Compatible with all wallets</p>
-
-                    <p>Eliminate chargebacks</p>
-                    <p>Payments are irreversible</p>
-
-                    <p>Zero volatility</p>
-                    <p>Locked-in exchange rate</p>
-
-
-                </div>
-            </div>
-
-        </div>
-        <div class="col-6">
-            <img class="width100" src={"https://triple-a.io/wp-content/uploads/2023/08/Frame-70.png"} alt="crypto payments">
-
-
         </div>
     </div>
     <div class="row fourth-section">
-        <div class="col-6">
-            <img class="width100" src={"https://triple-a.io/wp-content/uploads/2023/08/Group-130-min.png"} alt="crypto payments">
 
-        </div>
-        <div class="col-6">
-            <p>Crypto Payouts</p>
-            <div class="row">
-                <h1>Pay anyone, anywhere with crypto.
-                </h1>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <p>Never touch crypto </p>
-                    <p>Send crypto payments without holding or managing crypto.</p>
-                    <p>Available 24/7</p>
-                    <p>Real-time payouts</p>
-                </div>
-                <div class="col-4">
-                    <p>Save on fees</p>
-                    <p>Pay lower fees than traditional remittance and cross-border payment solutions.</p>
-                    <p>Zero volatility</p>
-                    <p>Locked-in exchange rate</p>
-                </div>
-            </div>
-            <div class="row">
-                <button class="btn btn-primary">Find Out More</button>
-
-            </div>
-        </div>
     </div>
-  </div>
+
 <style>
     .width100{
         width: 100%;
@@ -211,6 +290,40 @@
         background-image: url("https://newtriplea.wpengine.com/wp-content/uploads/2023/08/Frame-2610578.svg");
         background-position: center center;
         background-size: cover;
+    }
+    .second-section{
+        background-image: url("https://triple-a.io/wp-content/uploads/2023/09/Frame-2610813.png");
+        /* background-position: center center; */
+        background-size: cover;
+        margin-top: -180px;
+    }
+    .third-section{
+        background-image: url("https://triple-a.io/wp-content/uploads/2023/08/Group-628202.svg");
+        /* background-position: center center; */
+        background-size: cover;
+        margin-top: -180px;
+    }
+    .video-row{
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+    .nav-item{
+        width: 50%;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .nav-item button{
+        color: #7E7E7E;
+        border-color: transparent ;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 24px;
+    }
+    .nav-link.active{
+        font-weight: 500;
+        color: #FFF;
     }
 </style>
   <Footer />
