@@ -2,39 +2,93 @@
 <script>
         import { onMount } from 'svelte';
 
-    import homepage from '../contents/homepage.md';
+     import homepage from '../contents/homepage.md';
 
-// Declare reactive variables at the top level of the component
-let attributes = {};
-let html = '';
+// // Declare reactive variables at the top level of the component
+// let attributes = {};
+// let html = '';
 
-onMount(async () => {
-    const response = await fetch(homepage);
-    console.log("response");
-    console.log(response);
-    const text = await response.text();
-    const { parsedAttributes, parsedHtml } = parseMarkdown(text); // Adjust variable names to avoid conflicts
-    attributes = parsedAttributes; // Assign values without the $ prefix
-    html = parsedHtml; // Assign values without the $ prefix
-    console.log(attributes);
-});
+// onMount(async () => {
+//     const response = await fetch(homepage);
+//     console.log("response");
+//     console.log(response);
+//     const text = await response.text();
+//     const { parsedAttributes, parsedHtml } = parseMarkdown(text); // Adjust variable names to avoid conflicts
+//     attributes = parsedAttributes; // Assign values without the $ prefix
+//     html = parsedHtml; // Assign values without the $ prefix
+//     console.log(attributes);
+// });
 
-// Function to parse Markdown content
-function parseMarkdown(text) {
-    // You need to implement parsing logic here
-    // This could involve using a Markdown parser library or custom parsing logic
-    // For simplicity, let's assume your Markdown has a specific format and you can parse it directly
-    const lines = text.split('\n');
-    let title = '';
-    // Assuming the first line contains the title
-    if (lines.length > 0) {
-        title = lines[0].trim();
+// // Function to parse Markdown content
+// function parseMarkdown(text) {
+//     // You need to implement parsing logic here
+//     // This could involve using a Markdown parser library or custom parsing logic
+//     // For simplicity, let's assume your Markdown has a specific format and you can parse it directly
+//     const lines = text.split('\n');
+//     let title = '';
+//     // Assuming the first line contains the title
+//     if (lines.length > 0) {
+//         title = lines[0].trim();
+//     }
+//     return {
+//         parsedAttributes: { title },
+//         parsedHtml: text // For simplicity, just use the entire Markdown text as HTML
+//     };
+// }
+
+   // Declare reactive variables at the top level of the component
+   let attributes = {};
+    let html = '';
+
+    onMount(async () => {
+        const response = await fetch(homepage);
+        const text = await response.text();
+        const { parsedAttributes, parsedHtml } = parseMarkdown(text);
+        attributes = parsedAttributes;
+        html = parsedHtml;
+        console.log(attributes);
+    });
+
+    // Function to parse Markdown content
+    function parseMarkdown(text) {
+    // Extract YAML front matter and content
+    const frontMatterRegex = /^---\r?\n([\s\S]+?)\r?\n---\r?\n([\s\S]*)$/;
+    const matches = text.match(frontMatterRegex);
+    let parsedAttributes = {};
+    let parsedHtml = '';
+
+    if (matches && matches.length === 3) {
+        const frontMatter = matches[1];
+        parsedHtml = matches[2];
+
+        // Parse YAML front matter attributes
+        parsedAttributes = parseYamlFrontMatter(frontMatter);
+    } else {
+        // If no front matter found, consider the entire text as content
+        parsedHtml = text;
     }
+
     return {
-        parsedAttributes: { title },
-        parsedHtml: text // For simplicity, just use the entire Markdown text as HTML
+        parsedAttributes,
+        parsedHtml
     };
 }
+
+function parseYamlFrontMatter(frontMatter) {
+    const attributeLines = frontMatter.split('\n');
+    const attributes = {};
+
+    attributeLines.forEach(line => {
+        // Ignore empty lines and lines that don't contain a colon
+        if (line.trim() && line.includes(':')) {
+            const [key, value] = line.split(':').map(part => part.trim());
+            attributes[key] = value;
+        }
+    });
+
+    return attributes;
+}
+
     import Header from '../components/Header.svelte';
     import Footer from '../components/Footer.svelte';
     import animation from '../components/lottie.json';
@@ -51,11 +105,12 @@ function parseMarkdown(text) {
         <div class="row container" style="margin-top:100px;padding-bottom:216px; width: 1116px;">
             <div class="col-7 col-md-7 col-sm-12">
                 <div class="row">
-                    <h1 class="fancy-text" style="font-size: 48px;line-height:64px; font-weight:700;">Pay & get paid in BTC <br> without touching Crypto</h1>
-                    <h1 class="fancy-text" style="font-size: 48px;line-height:64px; font-weight:700;">{attributes.title}</h1>
+                    <!-- <h1 class="fancy-text" style="font-size: 48px;line-height:64px; font-weight:700;">Pay & get paid in BTC <br> without touching Crypto</h1> -->
+                    <h1 class="fancy-text" style="font-size: 48px;line-height:64px; font-weight:700;">{attributes.homepage_top_title}</h1>
                 </div>
                 <div class="row" style="margin-top: 40px;">
-                    <p style="font-size:16px; color:#7E7E7E;font-weight:400;">Enjoy the benefits of cryptocurrency payments without having to hold or convert crypto, with zero-volatility and next-day bank settlement.</p>
+                    <!-- <p style="font-size:16px; color:#7E7E7E;font-weight:400;">Enjoy the benefits of cryptocurrency payments without having to hold or convert crypto, with zero-volatility and next-day bank settlement.</p> -->
+                    <p style="font-size:16px; color:#7E7E7E;font-weight:400;">{attributes.description}</p>
                 </div>
                 <div class="row"  style="margin-top: 40px;">
                     <div class="col-6 col-md-6 col-sm-6">
