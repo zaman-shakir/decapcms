@@ -5,7 +5,9 @@ const config = {
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+	},
+    assetsInclude: ["**/*.md"] // Add this line to include Markdown files as assets
+
 };
 
 export default config;
