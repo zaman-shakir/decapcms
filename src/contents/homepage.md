@@ -1,6 +1,6 @@
 ---
 title: homepage
-homepage_top_title: "Now updated: Pay & get paid in BTC without touching Crypto "
+homepage_top_title: "Now updated Pay & get paid in BTC without touching Crypto "
 layout: blog
 description: "Enjoy the benefits of cryptocurrency payments without having to
   hold or convert crypto, with zero-volatility and next-day bank settlement.  "
