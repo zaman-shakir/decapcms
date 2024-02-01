@@ -1,25 +1,26 @@
+# Branch to update (optional; defaults to master)
 backend:
-	name:  git-gateway
-	branch:  main  # Branch to update (optional; defaults to master)
+  name: git-gateway # Replace 'github' with your preferred backend provider
+  branch: main # Branch to update (optional; defaults to master)
 
 # This line should *not* be indented
-publish_mode:  editorial_workflow
+publish_mode: editorial_workflow
 
 # These lines should *not* be indented
-media_folder:  "static/uploads"  # Media files will be stored in the repo under static/uploads
-public_folder:  "/uploads"  # The src attribute for uploaded media will begin with /uploads
+media_folder: 'static/uploads' # Media files will be stored in the repo under static/uploads
+public_folder: '/uploads' # The src attribute for uploaded media will begin with /uploads
 
 collections:
-  - name: "content_homepage" # Used in routes, e.g., /admin/collections/blog
-    label: "Homepage" # Used in the UI
-    folder: "src/contents" # The path to the folder where the documents are stored
+  - name: 'content_homepage' # Used in routes, e.g., /admin/collections/blog
+    label: 'Homepage' # Used in the UI
+    folder: 'src/contents' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
+    slug: '{{slug}}' # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
-      -  {label:  "Title",  name:  "title",  widget:  "string"}
-      -  {label:  "Homepage top title",  name:  "homepage_top_title",  widget:  "string"}
-      -  {label:  "Layout",  name:  "layout",  widget:  "hidden",  default:  "blog"}
-      -  {label:  "Description",  name:  "description",  widget:  "string"}
-      -  {label:  "Publish Date",  name:  "date",  widget:  "datetime"}
-      -  {label:  "Featured Photo",  name:  "featured",  widget:  "image"}
-      -  {label:  "Body",  name:  "body",  widget:  "markdown"}
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Homepage top title', name: 'homepage_top_title', widget: 'string' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Featured Photo', name: 'featured', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
