@@ -1,8 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script>
 	import { onMount } from 'svelte';
-	import fs from 'fs';
-	import path from 'path';
+
 	import homepage from '../contents/homepage.md';
 	/*
         // Declare reactive variables at the top level of the component
@@ -48,66 +47,7 @@
 		attributes = parsedAttributes;
 		html = parsedHtml;
 		console.log(attributes);
-
-		const blogFolder = '../contents/blog';
-		//import homepage from '../contents/homepage.md';
-		// Path to the folder containing blog posts
-		const files = fs.readdirSync(blogFolder);
-		for (const file of files) {
-			const filePath = path.join(blogFolder, file);
-			const fileContent = fs.readFileSync(filePath, 'utf-8'); // Read file content
-
-			// Parse Markdown content for each file
-			const { parsedAttributesBlog, parsedHtmlBlog } = parseMarkdownBlog(fileContent);
-
-			// Store parsed data in an array
-			blogPosts.push({
-				fileName: file, // Store file name for reference
-				attributes: parsedAttributesBlog,
-				html: parsedHtmlBlog
-			});
-		}
-
-		console.log(blogPosts);
 	});
-	function parseMarkdownBlog(text) {
-		// Extract YAML front matter and content
-		const frontMatterRegex = /^---\r?\n([\s\S]+?)\r?\n---\r?\n([\s\S]*)$/;
-		const matches = text.match(frontMatterRegex);
-		let parsedAttributes = {};
-		let parsedHtml = '';
-
-		if (matches && matches.length === 3) {
-			const frontMatter = matches[1];
-			parsedHtml = matches[2];
-
-			// Parse YAML front matter attributes
-			parsedAttributes = parseYamlFrontMatterBlog(frontMatter);
-		} else {
-			// If no front matter found, consider the entire text as content
-			parsedHtml = text;
-		}
-
-		return {
-			parsedAttributes,
-			parsedHtml
-		};
-	}
-
-	function parseYamlFrontMatterBlog(frontMatter) {
-		const attributeLines = frontMatter.split('\n');
-		const attributes = {};
-
-		attributeLines.forEach((line) => {
-			// Ignore empty lines and lines that don't contain a colon
-			if (line.trim() && line.includes(':')) {
-				const [key, value] = line.split(':').map((part) => part.trim());
-				attributes[key] = value;
-			}
-		});
-
-		return attributes;
-	}
 
 	function parseMarkdown(text) {
 		const frontMatterRegex = /^---\r?\n([\s\S]+?)\r?\n---\r?\n([\s\S]*)$/;
@@ -227,13 +167,21 @@
 			</div>
 		</div>
 		<!-- src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", -->
-		<!-- poster="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" -->
+		<!-- ster="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg" -->
 
 		<div class="col-5">
 			<video src="homepage-top.mp4" , width="570px" autoplay muted loop
 				><track kind="captions" /></video
 			>
 			<!-- <VideoPlayer width="500" height="500" poster="./local_poster.jpg" source="../components/homepage_top.mp4" loop="true" /> -->
+		</div>
+		<div class="col-12">
+			<div class="col-12">
+				<a href={attributes.blog1_link}> {attributes.blog1_text}</a>
+			</div>
+			<div class="col-12">
+				<a href={attributes.blog2_link}> {attributes.blog2_text}</a>
+			</div>
 		</div>
 	</div>
 </div>
