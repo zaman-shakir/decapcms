@@ -105,7 +105,6 @@
 
 	import Header from '../../components/Header.svelte';
 	import Footer from '../../components/Footer.svelte';
-	import animation from '../components/lottie.json';
 	// import VideoPlayer from 'svelte-video-player';
 </script>
 
