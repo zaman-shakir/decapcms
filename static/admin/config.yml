@@ -19,6 +19,22 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Homepage top title', name: 'homepage_top_title', widget: 'string' }
+      - { label: 'Blog 1 text', name: 'blog1_text', widget: 'string' }
+      - { label: 'Blog 1 link', name: 'blog1_link', widget: 'string' }
+      - { label: 'Blog 1 text', name: 'blog2_text', widget: 'string' }
+      - { label: 'Blog 2 link', name: 'blog2_link', widget: 'string' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Featured Photo', name: 'featured', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'blogs_list'
+    label: 'Blog lists for homepage'
+    folder: 'src/contents/blog' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Blog Name & Title add', name: 'title', widget: 'string' }
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
