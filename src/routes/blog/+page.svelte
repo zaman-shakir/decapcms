@@ -44,15 +44,18 @@
 
 	onMount(async () => {
         const params = new URLSearchParams(window.location.search);
+        console.log("started");
+        console.log(params);
         const blogParam = params.get('blog');
+        console.log(blogParam);
 
     // Use the value of 'blogParam' to dynamically import the corresponding content
         if (blogParam) {
             try {
-                // Dynamically import content based on the 'blog' parameter value
-                const blogModule = await import(`../../contents/${blogParam}.md`);
-                blogContent = blogModule.default; // Assign the imported content to blogContent
-                const response = await fetch(blogModule);
+                //import homepage from '../contents/blog/sdsds.md';
+
+                const blogModule = await import(`../../contents/blog/${blogParam}.md`);
+                const response = await fetch(blogModule.default); // Use the default export as the URL
                 const text = await response.text();
                 const { parsedAttributes, parsedHtml } = parseMarkdown(text);
                 attributes = parsedAttributes;
@@ -61,6 +64,7 @@
             } catch (error) {
                 console.error('Error importing blog content:', error);
             }
+
         }
 
 	});
