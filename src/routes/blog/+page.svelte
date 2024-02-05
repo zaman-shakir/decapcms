@@ -50,7 +50,7 @@
         if (blogParam) {
             try {
                 // Dynamically import content based on the 'blog' parameter value
-                const blogModule = await import(`../contents/${blogParam}.md`);
+                const blogModule = await import(`../../contents/${blogParam}.md`);
                 blogContent = blogModule.default; // Assign the imported content to blogContent
                 const response = await fetch(blogModule);
                 const text = await response.text();
@@ -103,8 +103,8 @@
 		return attributes;
 	}
 
-	import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Header from '../../components/Header.svelte';
+	import Footer from '../../components/Footer.svelte';
 	import animation from '../components/lottie.json';
 	// import VideoPlayer from 'svelte-video-player';
 </script>
