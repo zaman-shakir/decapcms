@@ -177,7 +177,7 @@
 		</div>
 		<div class="col-12">
 			<div class="col-12">
-				<a href={attributes.blog1_link}> {attributes.blog1_text}</a>
+				<a href="https://celadon-zuccutto-5e6849.netlify.app/?blog=7-benefits-of-accepting-crypto-on-your-e-commerce"> {attributes.blog1_text}</a>
 			</div>
 			<div class="col-12">
 				<a href={attributes.blog2_link}> {attributes.blog2_text}</a>
