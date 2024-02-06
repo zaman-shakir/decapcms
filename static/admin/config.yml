@@ -40,3 +40,13 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Photo', name: 'featured', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'items'
+    label: 'Items'
+    folder: 'content/items'
+    create: true
+    fields:
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'description', label: 'Description', widget: 'string' }
+      - { name: 'imageUrl', label: 'Image URL', widget: 'string' }
+      - { name: 'content', label: 'Content', widget: 'markdown' }
+    format: 'json' # Set the format to JSON
