@@ -1,7 +1,9 @@
 <!-- src/routes/+page.svelte -->
 <script>
 	import { onMount } from 'svelte';
-
+	import PostsList from '$lib/components/PostsList.svelte'
+	import Pagination from '$lib/components/Pagination.svelte'
+	import { siteDescription } from '$lib/config'
 	//import homepage from '../contents/homepage.md';
     let blogContent = ''; // Initialize blogContent variable
 
